@@ -116,13 +116,19 @@ Before you begin, ensure that you have the following:
 ### Terminal:
 
 1. Open your terminal and make sure that you are in the directory where you want to work.
-2. Run the following command to find the location of the package and save it into an environmental variable:
+   
+2. Install the solarSurvival package using the following command:
+
+    ```bash
+    pip3 install -i https://test.pypi.org/simple/ solarSurvival
+    ```
+3. Run the following command to find the location of the package and save it into an environmental variable:
 
     ```bash
     export SOLAR_SURVIVAL_PATH=$(pip3 show solarSurvival | grep -E '^Location:' | awk '{print $2}')
     ```
 
-3. Run the following command to run the package:
+4. Run the following command to run the package:
 
     ```bash
     python3 $SOLAR_SURVIVAL_PATH/solar_Survival/solarSurvival.py
@@ -131,13 +137,18 @@ Before you begin, ensure that you have the following:
 ### Command Prompt (Windows):
 
 1. Open your command prompt and make sure that you are in the directory where you want to work.
-2. Run the following command to find the location of the package and save it into an environmental variable:
+2. Install the solarSurvival package using the following command:
+
+    ```bash
+    pip3 install -i https://test.pypi.org/simple/ solarSurvival
+    ```
+3. Run the following command to find the location of the package and save it into an environmental variable:
 
     ```batch
     for /f "tokens=2 delims= " %A in ('pip show solarSurvival ^| find "Location"') do set SOLAR_SURVIVAL_PATH=%A
     ```
 
-3. Run the following command to run the package:
+4. Run the following command to run the package:
 
     ```batch
     python %SOLAR_SURVIVAL_PATH%\solar_Survival\solarSurvival.py
@@ -146,13 +157,18 @@ Before you begin, ensure that you have the following:
 ### PowerShell (Windows):
 
 1. Open your PowerShell and make sure that you are in the directory where you want to work.
-2. Run the following command to find the location of the package and save it into an environmental variable:
+2. Install the solarSurvival package using the following command:
+
+    ```bash
+    pip3 install -i https://test.pypi.org/simple/ solarSurvival
+    ```
+3. Run the following command to find the location of the package and save it into an environmental variable:
 
     ```powershell
     $SOLAR_SURVIVAL_PATH = (pip show solarSurvival | Select-String -Pattern '^Location:' | ForEach-Object { $_.ToString().Split(':')[1].Trim() })
     ```
 
-3. Run the following command to run the package:
+4. Run the following command to run the package:
 
     ```powershell
     python $SOLAR_SURVIVAL_PATH\solar_Survival\solarSurvival.py
