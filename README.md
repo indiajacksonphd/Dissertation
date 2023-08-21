@@ -1,12 +1,13 @@
 # Implementation of Statistical Machine Learning Models for Space Weather Predictin in a Cloud Computing Environment
 
 There are 3 parts to this project: <br>
-	1) Use of survival analysis for time to detection of solar energetic particles (SEPs)<br>
-	2) Use of random survival trees for time to detection of SEPs <br>
-	3) Analysis for time to detection of SEPs conducted remotely in an AWS cloud infrastructure <br>
+
+- Use of survival analysis for time to detection of solar energetic particles (SEPs)<br>
+- Use of random survival trees for time to detection of SEPs <br>
+- Analysis for time to detection of SEPs conducted remotely in an AWS cloud infrastructure <br>
 
 
-## Solar Survival Package
+# Solar Survival Package
 
 The "solarSurvival" package is a comprehensive and innovative toolkit designed to revolutionize the analysis, prediction, and understanding of SEPs in the realm of space weather research. Solar flares and their associated energetic particles hold critical implications for technology, astronaut health, and space missions. This package goes beyond traditional methods, offering a comprehensive approach that encompasses advanced statistical survival analysis, cloud computing, and will be updated with integration of cutting-edge machine learning techniques.
 
@@ -20,11 +21,9 @@ The "solarSurvival" package is a dedicated showcase of my in-depth research and 
 
 The "solarSurvival" package follows semantic versioning (SemVer). This means that version numbers are assigned based on the significance of changes introduced in each release. A version number consists of three parts: MAJOR.MINOR.PATCH.
 
-- **MAJOR:** Incremented for backward-incompatible changes or major new features. <br>
-- **MINOR:** Incremented for backward-compatible feature additions or enhancements. <br>
-- **PATCH:** Incremented for backward-compatible bug fixes or small improvements. <br>
-
-### Changelog
+- **MAJOR:** Incremented for backward-incompatible changes or major new features.
+- **MINOR:** Incremented for backward-compatible feature additions or enhancements.
+- **PATCH:** Incremented for backward-compatible bug fixes or small improvements.
 
 #### Version 1.0.0 (2023-08-20)
 
@@ -44,29 +43,76 @@ Upcoming Update:
 
 ### Keeping Up-to-Date
 
-To stay updated with the latest changes and enhancements, you can regularly check the [GitHub repository](https://github.com/indiajacksonphd/Dissertation/).
+For raw code access and to stay updated with the latest changes and enhancements, you can regularly check the [GitHub repository](https://github.com/indiajacksonphd/Dissertation/).
 
 
 ## Requirements
-The Solar Survival Package relies on the following libraries and dependencies. They will be automatically installed when you install the package: <br>
 
-pandas==1.3.3 <br>
-boto3==1.18.120 <br>
-numpy==1.21.2 <br>
-seaborn==0.11.2 <br>
-matplotlib==3.4.3 <br>
-scipy==1.7.1 <br>
-tabulate==0.8.9 <br>
-lifelines==0.28.2 <br>
+The Solar Survival Package relies on the following libraries and dependencies. They will be automatically installed when you install the package:
+
+- pandas==1.3.3
+- boto3==1.18.120
+- numpy==1.21.2
+- seaborn==0.11.2
+- matplotlib==3.4.3
+- scipy==1.7.1
+- tabulate==0.8.9
+- lifelines==0.28.2
 
 
 ## Installation and Usage
 
-1. Open your terminal/command prompt.
-2. Copy and paste the following command to install the "solarSurvival" package: <br>
-	pip install solarSurvival
-3. After installation, you can run the package by entering the following command: <br>
-	python3 solarSurvival.py
+
+### Terminal:
+
+Make sure that you are in the directory where you want to work.
+
+1. Open your terminal.
+2. Run the following command to find the location of the package and save it into an environmental variable:
+
+    ```bash
+    export SOLAR_SURVIVAL_PATH=$(pip3 show solarSurvival | grep -E '^Location:' | awk '{print $2}')
+    ```
+
+3. Run the following command to run the package:
+
+    ```bash
+    python3 $SOLAR_SURVIVAL_PATH/solar_Survival/solarSurvival.py
+    ```
+
+### Command Prompt (Windows):
+
+Make sure that you are in the directory where you want to work.
+
+1. Open your command prompt.
+2. Run the following command to find the location of the package and save it into an environmental variable:
+
+    ```batch
+    for /f "tokens=2 delims= " %A in ('pip show solarSurvival ^| find "Location"') do set SOLAR_SURVIVAL_PATH=%A
+    ```
+
+3. Run the following command to run the package:
+
+    ```batch
+    python %SOLAR_SURVIVAL_PATH%\solar_Survival\solarSurvival.py
+    ```
+
+### PowerShell (Windows):
+
+Make sure that you are in the directory where you want to work.
+
+1. Open your PowerShell.
+2. Run the following command to find the location of the package and save it into an environmental variable:
+
+    ```powershell
+    $SOLAR_SURVIVAL_PATH = (pip show solarSurvival | Select-String -Pattern '^Location:' | ForEach-Object { $_.ToString().Split(':')[1].Trim() })
+    ```
+
+3. Run the following command to run the package:
+
+    ```powershell
+    python $SOLAR_SURVIVAL_PATH\solar_Survival\solarSurvival.py
+    ```
 
 You will see a welcome message along with information about where you can find the results.
 
